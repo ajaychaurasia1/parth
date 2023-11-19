@@ -1,75 +1,46 @@
-<html>
-  <head>
-    <title>Parth</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parth</title>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTOuxvXwkawpk33L9xOgZ4QS2IPG5M7JVztg&usqp=CAU" type="image/x-icon"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    /* Adjust the dimensions and position of the video container */
+    #video-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-}
+    /* Style the iframe to cover the entire container */
+    #video-container iframe {
+      width: 100%;
+      height: 100%;
+    }
 
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-</style>
+    /* Hide the default video controls */
+    #video-container iframe::-webkit-media-controls {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-
-<video autoplay muted loop id="myVideo">
-  <source src="https://www.youtube.com/shorts/XA2y_g-x4BM?feature=share" type="video/mp4">
-</video>
-
-<script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
-
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
-  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/4765ad03-79a4-42f7-bc7f-c58555a72cb3/webchat/config.js" defer></script>
-</script>
-
+  <div id="video-container">
+    <!-- Replace VIDEO_ID with the YouTube video ID -->
+    <iframe src="https://www.youtube.com/shorts/XA2y_g-x4BM?autoplay=1&loop=1&playlist=XA2y_g-x4BM" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <!-- Other content can be added on top of the video background -->
+  <div>
+    <!-- Your content here -->
+    <h1>Welcome to My Website</h1>
+    <p>This is some content on top of the video background.</p>
+  </div>
 </body>
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/4765ad03-79a4-42f7-bc7f-c58555a72cb3/webchat/config.js" defer></script>
 </html>
 
